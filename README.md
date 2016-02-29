@@ -14,26 +14,32 @@ Programs needed:
 - RAxML (http://sco.h-its.org/exelixis/web/software/raxml/index.html)
 - git (https://git-scm.com/)
 - biopython (http://biopython.org/wiki/Download)
+- FigTree (http://tree.bio.ed.ac.uk/software/figtree/)
 
-To install clustal-omega, MAFFT, RAxML and git on MacOSX you will need to install homebrew:
+
+To install clustal-omega, MAFFT, RAxML, git and FigTree on MacOSX you will need to install homebrew:
 
 ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 
 After that run:
 
 ```brew install mafft clustal-omega git```
+```brew install Caskroom/cask/figtree``` 
 
 For python stuff like biopython we will need to install pip:
 
-```sudo easy_install pip```
+```sudo easy_install pip```  
+
 (You'll need your admin password for this)
 
 ```pip install biopython```
+
 
 Download all the data for the tutorial:
 
 ```git clone https://github.com/UofABioinformaticsHub/201502_basicPhylogenetics.git```
 
+And you're ready to rock!
 
 
 
