@@ -32,6 +32,10 @@ Do the same thing to the last part of the sequence by removing the right sequenc
 
 Once thats done, lets save the file as "marsupial\_refseq.aln_edit.fna". Unfortunately, Jalview does some weird stuff to the files so we need to rename the file and also get rid of some things that were added to the fasta header.
 
+For example, instead of:  
+
+`>NC_001610_Didelphis_virginiana` we have `>NC_001610_Didelphis_virginiana/1-15300`
+
 They seem to have added the bp alignment position to the header, so lets delete this using unix sed:
 
 `sed 's/\/.*$//g' marsupial_refseq.aln_edit.fna.mfa > marsupial_refseq.aln_edit.fna`
