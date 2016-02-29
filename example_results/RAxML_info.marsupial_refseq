@@ -1,0 +1,127 @@
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+
+This is RAxML version 8.1.15 released by Alexandros Stamatakis on December 25 2014.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+
+Alignment has 7456 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 3.09%
+
+RAxML rapid bootstrapping and subsequent ML search
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+
+Executing 10 rapid bootstrap inferences and thereafter a thorough ML search 
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heteorgeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 7456
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC-PTHREADS -T 4 -f a -p 111 -x 12345 -N 10 -m GTRGAMMA -s marsupial_refseq.phy -n marsupial_refseq 
+
+
+Reverting BFGS ... 
+
+Time for BS model parameter optimization 16.630447
+Bootstrap[0]: Time 24.602203 seconds, bootstrap likelihood -187429.457265, best rearrangement setting 13
+Bootstrap[1]: Time 7.242668 seconds, bootstrap likelihood -183410.373940, best rearrangement setting 13
+Bootstrap[2]: Time 7.074901 seconds, bootstrap likelihood -186304.603470, best rearrangement setting 12
+Bootstrap[3]: Time 7.929513 seconds, bootstrap likelihood -185690.086044, best rearrangement setting 15
+Bootstrap[4]: Time 7.394072 seconds, bootstrap likelihood -185838.101683, best rearrangement setting 10
+Bootstrap[5]: Time 6.925856 seconds, bootstrap likelihood -185906.830461, best rearrangement setting 10
+Bootstrap[6]: Time 3.571501 seconds, bootstrap likelihood -185536.757608, best rearrangement setting 6
+Bootstrap[7]: Time 3.496936 seconds, bootstrap likelihood -185744.704931, best rearrangement setting 14
+Bootstrap[8]: Time 6.918200 seconds, bootstrap likelihood -188143.500197, best rearrangement setting 5
+Bootstrap[9]: Time 7.482147 seconds, bootstrap likelihood -186446.618995, best rearrangement setting 7
+
+
+Overall Time for 10 Rapid Bootstraps 82.758301 seconds
+Average Time per Rapid Bootstrap 8.275830 seconds
+
+Starting ML Search ...
+
+Fast ML optimization finished
+
+Fast ML search Time: 108.055670 seconds
+
+Reverting BFGS ... 
+Slow ML Search 0 Likelihood: -185328.177107
+Slow ML Search 1 Likelihood: -185328.177107
+Slow ML optimization finished
+
+Slow ML search Time: 93.625363 seconds
+Reverting BFGS ... 
+Thorough ML search Time: 62.785630 seconds
+
+Final ML Optimization Likelihood: -185328.177115
+
+Model Information:
+
+Model Parameters of Partition 0, Name: No Name Provided, Type of Data: DNA
+alpha: 0.270671
+Tree-Length: 10.624919
+rate A <-> C: 3.360774
+rate A <-> G: 6.557721
+rate A <-> T: 3.887257
+rate C <-> G: 0.527843
+rate C <-> T: 34.390129
+rate G <-> T: 1.000000
+
+freq pi(A): 0.331472
+freq pi(C): 0.251139
+freq pi(G): 0.128548
+freq pi(T): 0.288841
+
+
+ML search took 264.480396 secs or 0.073467 hours
+
+Combined Bootstrap and ML search took 347.238851 secs or 0.096455 hours
+
+Drawing Bootstrap Support Values on best-scoring ML tree ...
+
+
+
+Found 1 tree in File /Users/jbreen/Documents/Bioinformatics_Hub/Tutorials/201502_basicPhylogenetics/RAxML_bestTree.marsupial_refseq
+
+
+
+Found 1 tree in File /Users/jbreen/Documents/Bioinformatics_Hub/Tutorials/201502_basicPhylogenetics/RAxML_bestTree.marsupial_refseq
+
+Program execution info written to /Users/jbreen/Documents/Bioinformatics_Hub/Tutorials/201502_basicPhylogenetics/RAxML_info.marsupial_refseq
+All 10 bootstrapped trees written to: /Users/jbreen/Documents/Bioinformatics_Hub/Tutorials/201502_basicPhylogenetics/RAxML_bootstrap.marsupial_refseq
+
+Best-scoring ML tree written to: /Users/jbreen/Documents/Bioinformatics_Hub/Tutorials/201502_basicPhylogenetics/RAxML_bestTree.marsupial_refseq
+
+Best-scoring ML tree with support values written to: /Users/jbreen/Documents/Bioinformatics_Hub/Tutorials/201502_basicPhylogenetics/RAxML_bipartitions.marsupial_refseq
+
+Best-scoring ML tree with support values as branch labels written to: /Users/jbreen/Documents/Bioinformatics_Hub/Tutorials/201502_basicPhylogenetics/RAxML_bipartitionsBranchLabels.marsupial_refseq
+
+Overall execution time for full ML analysis: 347.244285 secs or 0.096457 hours or 0.004019 days
+

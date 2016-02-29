@@ -1,0 +1,41 @@
+#!/bin/bash
+
+### NEEDS		Phylip formatted alignment
+###				raxmlHPC-PTHREADS available through the PATH
+###				Uncomment appropriate command line bellow
+
+###	Parameters	-T = Number of cores allocated to the analysis
+###				-N = Number of bootstrap iterations 
+
+### GIVES		RAxML_BestTree.INPUTFILE - Tree without branch support
+###				RAxML_bipartitions.INPUTFILE - Tree with branch support when bootstraping was performed
+
+# Remove input file extension
+y=${1/\.*/}
+
+
+####################
+### DNA alignment
+####################
+
+## No bootstrap
+#raxmlHPC-PTHREADS -T 4 -m GTRGAMMA -s $y.phy -n $y
+
+## 100 rapid bootstrap
+raxmlHPC-PTHREADS -T 4 -f a -p 111 -x 12345 -N 10 -m GTRGAMMA -s $y.phy -n $y
+
+
+####################
+### MultiState data (e.g., Bovid SNP chip)
+####################
+
+# GTR
+#raxmlHPC-PTHREADS -T 4 -m MULTIGAMMA -s $y.phy -n $y
+
+# MK
+#raxmlHPC-PTHREADS -T 4 -m MULTIGAMMA -K MK -s $y.phy -n $y
+
+# Bootstrap
+#raxmlHPC-PTHREADS -T 4 -f a -x 12345 -N 500 -m MULTIGAMMA -s $y.phy -n $y
+
+#raxmlHPC-PTHREADS -T 4 -f a -x 12345 -N 100 -m MULTIGAMMA -K MK -s $y.phy -n $y
