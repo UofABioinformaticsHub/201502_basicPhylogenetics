@@ -14,23 +14,6 @@ All these sequences are should be conserved between species, so we can go ahead 
 
 Note: To stop confusing the aligned and non-aligned fasta file, use the ".fna" file extension
 
-After alignment the fasta output should look something like this:
-```>NC_001610_Didelphis_virginiana
-------------------------------------------------------------
-------------------------------------------------------------
-------------------------------------------------------------
-
-------------------------------------------------------------
---------------------gttaatgtagcttaattt-aaagcaaagcactgaaaatgc
-ttagatggtttatatgttaaacccataaaca-cataggtttggtcctagcctt-attatt
-agttctaattagacctacacatgcaagtttccgctacccagtgagaatgccctttaagt-
---cttataaatt----aagcaaaaggagctggtatcaggcacaca----aaat---gtag
-ccgataacaccttgcttta-ccaca-cccccacgggagacagcagtgattaaaattaagc
-aataaacgaaagtttga-ctaagtcataatttacattagggttggtcaatttcgtgccag
-ccaccgcggtcatacgattaacccaaattaata-aataacggcgtaaagagtgtttaagt
-t--atata---c-aaaaataaagttaataattaactaaactgtagcacgttctagttaat
-attaaaatacataataaaaatgactttaata--tcaccgactacacgaaaactaagacac```
-
 The file has the same header and sequence lines, but gapped regions (sequences that are not present in the aligned data) are represented as a dash "-". Where there is sequence (i.e. ACGT's) the sequence aligns.
 
 Now its a little difficult to view this alignment on command-line so lets use Jalview:
@@ -94,12 +77,12 @@ After some time (usually 5-10 minutes) we should have some trees to look at. Let
 Note: You can replace "jbreen" with your username
 
 RAxML made quite a few files:
-```RAxML_bestTree.marsupial_refseq
-RAxML_bipartitions.marsupial_refseq
-RAxML_bipartitionsBranchLabels.marsupial_refseq
-RAxML_bootstrap.marsupial_refseq
-RAxML_flagCheck
-RAxML_info.marsupial_refseq```
+```RAxML_bestTree.marsupial_refseq```
+```RAxML_bipartitions.marsupial_refseq```
+```RAxML_bipartitionsBranchLabels.marsupial_refseq```
+```RAxML_bootstrap.marsupial_refseq```
+```RAxML_flagCheck```
+```RAxML_info.marsupial_refseq```
 
 The file we need to have a look at it "RAxML_bipartitions.marsupial_refseq". Once you open the file, you will be prompted to name the labels on the figure. Type "boostraps"
 
