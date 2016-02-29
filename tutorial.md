@@ -44,18 +44,18 @@ Before that we need to convert the fasta alignment to phylip format. To do this,
 ```python```
 
 The shell should change a little and show something like this:
-```LC02K51MKFFT1:201502_basicPhylogenetics jbreen$ python
-Python 2.7.11 (default, Jan 22 2016, 08:29:18)
-[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>>```
+```LC02K51MKFFT1:201502_basicPhylogenetics jbreen$ python```
+```Python 2.7.11 (default, Jan 22 2016, 08:29:18)```
+```[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin```
+```Type "help", "copyright", "credits" or "license" for more information.```
+```>>>```
 
 Now we need to run a few commands to convert the fasta alignment to phylip:
 
-```>>> from Bio import AlignIO
->>> AlignIO.convert("marsupial_refseq.aln_edit.fna", "fasta", "marsupial_refseq.phy", "phylip-relaxed")
-1
->>>```
+```>>> from Bio import AlignIO```
+```>>> AlignIO.convert("marsupial_refseq.aln_edit.fna", "fasta", "marsupial_refseq.phy", "phylip-relaxed")```
+```1```
+```>>>```
 
 To escape the python interactive shell run "Command-D"
 
