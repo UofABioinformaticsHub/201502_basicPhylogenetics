@@ -78,12 +78,12 @@ After some time (usually 5-10 minutes) we should have some trees to look at. Let
 Note: You can replace "jbreen" with your username
 
 RAxML made quite a few files:
-`RAxML_bestTree.marsupial_refseq`
-`RAxML_bipartitions.marsupial_refseq`
-`RAxML_bipartitionsBranchLabels.marsupial_refseq`
-`RAxML_bootstrap.marsupial_refseq`
-`RAxML_flagCheck`
-`RAxML_info.marsupial_refseq`
+`RAxML_bestTree.marsupial_refseq`  
+`RAxML_bipartitions.marsupial_refseq`  
+`RAxML_bipartitionsBranchLabels.marsupial_refseq`  
+`RAxML_bootstrap.marsupial_refseq`  
+`RAxML_flagCheck`  
+`RAxML_info.marsupial_refseq`  
 
 The file we need to have a look at it "RAxML_bipartitions.marsupial_refseq". Once you open the file, you will be prompted to name the labels on the figure. Type "boostraps"
 
