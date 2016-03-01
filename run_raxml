@@ -6,6 +6,9 @@
 
 ###	Parameters	-T = Number of cores allocated to the analysis
 ###				-N = Number of bootstrap iterations 
+###             -m = model
+###             -s = input alignment file
+###             -n = base name of output files
 
 ### GIVES		RAxML_BestTree.INPUTFILE - Tree without branch support
 ###				RAxML_bipartitions.INPUTFILE - Tree with branch support when bootstraping was performed
@@ -16,26 +19,45 @@ y=${1/\.*/}
 
 ####################
 ### DNA alignment
+### There are several models implemented in RAxML, corresponding to different DNA evolution models. 
+### DNA evolution models are different in the characteristics of the rates (speed) of mutations (e.g, from A to T, from C to G ...) and the equilibrium frequencies of the 4 bases A,T,G,C.
+### Here are some typic models:
+###  - JC69 is the simplest model, with the assumtions of equal rate for all mutations, and equal frequency for all bases.
+###  - HKY85 distinghishes only the rates of transition (A<->G,C<->T) and transversion (all other types of mutations). Hence, all transition (resp. transversion) mutations have the same rate.
+###  - When you have no prior information about the evolution process of your sequences, you can use the GTR model. It is the most general neutral model. You can also use "Modeltest" to have a suggested model for your data.
+### GAMMA parameter allows a rate heterogeneity: the rates across sites are not constant, but draw from a GAMMA distribution
+### I parameter allows a protion of sequences to be invariant during evolution
 ####################
 
-## No bootstrap
+## No bootstrap, GTR model + GAMMA (rate heterogeneity)
 #raxmlHPC-PTHREADS -T 4 -m GTRGAMMA -s $y.phy -n $y
 
-## 100 rapid bootstrap
-raxmlHPC-PTHREADS -T 4 -f a -p 111 -x 12345 -N 10 -m GTRGAMMA -s $y.phy -n $y
+## No bootstrap, GTR model + GAMMA (rate heterogeneity) + I (Invariant Sites)
+#raxmlHPC-PTHREADS -T 4 -m GTRGAMMAI -s $y.phy -n $y
 
+## 100 rapid bootstrap, GTR model + rate heterogeneity (GAMMA)
+raxmlHPC-PTHREADS -T 4 -f a -p 111 -x 12345 -N 100 -m GTRGAMMA -s $y.phy -n $y
+
+## HKY85 model + rate heterogeneity (GAMMA)
+#raxmlHPC-PTHREADS -T 4 -f a -p 111 -x 12345 -N 100 -m GTRGAMMA --HKY85 -s $y.phy -n $y
+
+## JC69 model 
+#raxmlHPC-PTHREADS -T 4 -f a -p 111 -x 12345 -N 100 -m GTRGAMMA --JC69 -s $y.phy -n $y
 
 ####################
-### MultiState data (e.g., Bovid SNP chip)
+### MultiState data (e.g., Bovid SNP chip, morphological data)
+### GTR model is just similar to the one in DNA model except that the number of states is not necessarily 4 
+### MK model is considered as an extension of JC69 DNA model to several states, i.e. equal mutation rate, and equal base frequency.
 ####################
 
-# GTR
+## No bootstrap, GTR model + GAMMA (rate heterogeneity)
 #raxmlHPC-PTHREADS -T 4 -m MULTIGAMMA -s $y.phy -n $y
 
-# MK
+## No bootstrap, MK model + GAMMA (rate heterogeneity)
 #raxmlHPC-PTHREADS -T 4 -m MULTIGAMMA -K MK -s $y.phy -n $y
 
-# Bootstrap
+## 500 bootstrap, GTR model + GAMMA (rate heterogeneity)
 #raxmlHPC-PTHREADS -T 4 -f a -x 12345 -N 500 -m MULTIGAMMA -s $y.phy -n $y
 
+## 100 bootstrap, MK model + GAMMA (rate heterogeneity)
 #raxmlHPC-PTHREADS -T 4 -f a -x 12345 -N 100 -m MULTIGAMMA -K MK -s $y.phy -n $y
